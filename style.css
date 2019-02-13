@@ -18,9 +18,10 @@ header {
 @media (min-width: 768px) {
     .block {
         display: flex;
+        margin-bottom: 50px;
         align-items: stretch;
     }
-    .sticky-block-column {
+    .sticky-block-track {
         position: relative;
         overflow: hidden;
         width: 45%;
@@ -28,13 +29,24 @@ header {
         flex-basis: 45%;
         flex-grow: 1;
     }
+    .sticky-block-item {
+        position: absolute;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+    }
+    .sticky-block-item.stuck-to-top {top: 0;bottom:auto;}
+    .sticky-block-item.stuck-to-bottom {top: auto; bottom:0;}
+    .sticky-block-item.stuck-to-screen {position: fixed;top:0;bottom:0;width: auto;}
     .non-sticky-block-column {
         width: 55%;
         flex-basis: 55%;
         flex-grow: 1;
     }
 
-    .sticky-item {
+    .sticky-block-item img {
         position: absolute;
         top: 0;
         left: 50%;
